@@ -5,25 +5,13 @@
 
 umask 022
 
-setopt PROMPT_SUBST
 setopt ALL_EXPORT
-
-export NC="%{$terminfo[sgr0]%}"
-
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE BLACK; do
-	eval $color='%{$NC%}%{$fg_bold[${(L)color}]%}'
-	eval ${(L)color}='%{$NC%}%{$fg[${(L)color}]%}'
-	(( count = $count + 1 ))
-done
-
-
 if [ "$EUID" = "0" ] || [ "$USER" = "root" ] ; then
 		PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${ROOTPATH}"
 		PROMPT=$'%{\e[31;1m%}%n%{\e[m%}%{\e[32;1m%}@%5m%{\e[m%} %{\e[33;1m%}%y%{\e[m%} %{\e[31;1m%}%~%{\e[m%}\n%1(j:%{\e[33;1m%}:%{\e[32;1m%})[%j]%{\e[m%} %{\e[33;1m%}%T%{\e[m%} %{\e[31;1m%}%# %{\e[m%}'
 else
 		PATH="/usr/local/bin:/usr/bin:/bin:${PATH}"
 		PROMPT=$'%{\e[32;1m%}%n@%5m%{\e[m%} %{\e[33;1m%}%y%{\e[m%} %{\e[31;1m%}%~%{\e[m%}\n%1(j:%{\e[33;1m%}:%{\e[32;1m%})[%j]%{\e[m%} %{\e[33;1m%}%T%{\e[m%} %{\e[31m%}%# %{\e[m%}'
-
 fi
 
 if [[ -d ~/bin ]] ; then
@@ -48,7 +36,7 @@ if [[ -d /opt/local/bin ]] ; then
 		fi
 fi
 
-RPROMPT=$'$(__git_ps1 "(%s)")%0(?:%{\e[32;1m%}:%{\e[31m%})[%?]%{\e[m%}'
+RPROMPT=$'%{\e[31m%}%# %{\e[m%}%{\e[33;1m%}%D{%a %d %b %G}%{\e[m%} %0(?:%{\e[32;1m%}:%{\e[31m%})[%?]%{\e[m%}'
 HISTSIZE=4096
 HISTFILE=~/.zsh_history
 SAVEHIST=3072
@@ -80,4 +68,3 @@ if [ "$HAVE_RUN_LOCAL_ZPROFILE" != "Y" ] && [[ -f ~/.zprofile.local ]]; then
   export HAVE_RUN_LOCAL_ZPROFILE="Y"
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

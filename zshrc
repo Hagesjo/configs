@@ -1,6 +1,6 @@
 # ~/.zshrc
 # $Id: zshrc 144 2012-04-19 23:01:12Z gnitset $
-source ~/.zshrc_lib
+#source ~/.zshrc_lib
 
 setopt NO_CLOBBER
 setopt NO_PROMPT_CR
@@ -143,7 +143,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias mntwin='sudo mount /dev/sda3 /media'
 alias se='setxkbmap se'
 alias dvorak='setxkbmap dvorak se'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+alias hagesjo='cd /var/www/hagesjo'
