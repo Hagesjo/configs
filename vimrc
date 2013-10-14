@@ -15,9 +15,7 @@ let mapleader = ","                 " remap leaderkey
 nnoremap <tab> %
 vnoremap <tab> %u
 " Shortcuts to go to EOL/Beginning of line ===========================
-map  <C-A>      0
 map  <C-E>      $
-imap <C-A>      <C-O>0
 imap <C-E>      <C-O>$
 " Shortcuts for inserting lines above/below the current line =========
 nnoremap + maO<esc>`a
@@ -52,10 +50,6 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap <leader>w <C-w>v<C-w>l
 
 
