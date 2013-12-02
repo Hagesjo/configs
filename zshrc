@@ -53,9 +53,6 @@ bindkey "\e[6~" history-beginning-search-forward  # pgdn
 
 alias py=python
 alias find='noglob find'
-alias woi='ssh wijk -t screen -UDr'
-alias mutto='ssh mail.oijk.net -t env LC_ALL=en_US.UTF-8 mutt'
-alias webs='python -m SimpleHTTPServer'
 
 update-zsh() {
 	emulate -L zsh
