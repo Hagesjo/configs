@@ -17,9 +17,6 @@ vnoremap <tab> %u
 " Shortcuts to go to EOL/Beginning of line ===========================
 map  <C-E>      $
 imap <C-E>      <C-O>$
-" Shortcuts for inserting lines above/below the current line =========
-nnoremap + maO<esc>`a
-nnoremap - mao<esc>`a
 " Make bracketmatching with tab 
 nnoremap <tab> %
 vnoremap <tab> %
@@ -45,16 +42,7 @@ inoremap kk <ESC>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-" Gör om, gör rätt:
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap <leader>w <C-w>v<C-w>l
-
-
 nnoremap <F3> :set hlsearch!<CR>
-
 noremap <F2> :NERDTree<enter> 
 
 
