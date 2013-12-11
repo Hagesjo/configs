@@ -54,25 +54,13 @@ bindkey "\e[6~" history-beginning-search-forward  # pgdn
 alias py=python
 alias find='noglob find'
 
-update-zsh() {
+update-configs() {
 	emulate -L zsh
 
-	if [[ x"$1" = x"" ]]; then
-		BAH_PATH="${HOME}/bah/"
-	else
-		BAH_PATH=$1
-	fi
-	echo "  "BAH_PATH=${BAH_PATH}
+   echo "Syncing configs"
+   git clone git@github.com:Ankmeister/configs /tmp/tmpconfigs
+   mv /tmp/tmpconfigs/.[^.(git)]* ~
 
-	echo "  "Syncing bah-repo.
-	svn up ${BAH_PATH}
-	echo "  "Updating zsh-config.
-	cat ${BAH_PATH}/configs/zshrc > ~/.zshrc_ && \
-		mv ~/.zshrc_ ~/.zshrc && echo .zshrc updated.
-	cat ${BAH_PATH}/configs/zprofile > ~/.zprofile_ && \
-		mv ~/.zprofile_ ~/.zprofile && echo .zprofile updated.
-	rm ~/.zcompdump.* 2> /dev/null && echo removed old .zcompdump.
-	echo "  "Recompiling configs.
 	zcompile ~/.zprofile 2> /dev/null
 	zcompile ~/.zshrc 2> /dev/null
 	zcompile ~/.zprofile.local 2> /dev/null
