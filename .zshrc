@@ -59,7 +59,8 @@ update-configs() {
 
    echo "Syncing configs"
    git clone git@github.com:Ankmeister/configs /tmp/tmpconfigs
-   mv /tmp/tmpconfigs/.[^.(git)]* ~
+   rsync -a /tmp/tmpconfigs/.[^.(git)]* ~
+   rm -rf /tmp/tmpconfigs
 
 	zcompile ~/.zprofile 2> /dev/null
 	zcompile ~/.zshrc 2> /dev/null
