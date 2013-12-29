@@ -57,7 +57,7 @@ alias find='noglob find'
 update-configs() {
 	emulate -L zsh
 
-   git clone git@github.com:Ankmeister/configs /tmp/tmpconfigs && echo "Cloned source successfully"
+   git clone https://github.com/Ankmeister/configs.git /tmp/tmpconfigs && echo "Cloned source successfully"
    rsync -a /tmp/tmpconfigs/.[^.(git)]* ~ && echo "Synced successfully"
    rm -rf /tmp/tmpconfigs && echo "Removed temporary source successfully"
 
