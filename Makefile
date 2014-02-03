@@ -5,12 +5,13 @@ install: ssh screen vim zsh
 
 ssh:
 	install -d -m 0755 ${HOME}/.ssh
-	install -b -m 0644 .ssh_config ${HOME}/.ssh/config
+	install -b -m 0644 .ssh/config ${HOME}/.ssh/config
 
 screen:
 	install -b -m 0644 .screenrc ${HOME}/.screenrc
 
 vim:
+	cp -r .vim ${HOME}/.vim
 	install -b -m 0644 .vimrc ${HOME}/.vimrc
 
 zsh:
