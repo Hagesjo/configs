@@ -2,8 +2,8 @@ execute pathogen#infect()
 filetype plugin on
 set invhlsearch					      " Inversesearch			
 set number                          " Set linenumber
-set shiftwidth=3                    " Indentation
-set tabstop=3                       " One tab == 3 spaces
+set shiftwidth=4                    " Indentation
+set tabstop=4                       " One tab == 3 spaces
 set smartindent                     " Set smartindent
 set expandtab                       " All spaces as tabs
 set ruler                           " Infobar at bottom
@@ -37,12 +37,8 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 " For bad aiming
-inoremap jj <ESC>
-inoremap kk <ESC>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap <F3> :set hlsearch!<CR>
 noremap <F2> :NERDTree<enter> 
-
-
