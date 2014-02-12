@@ -12,8 +12,6 @@ set undofile                        " Activate undofile
 set gdefault                        " %s/LOL/HERP/ is now %s/LOL/HERP/g
 syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
-nnoremap <tab> %
-vnoremap <tab> %u
 " Shortcuts to go to EOL/Beginning of line ===========================
 map  <C-E>      $
 imap <C-E>      <C-O>$
@@ -36,9 +34,8 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
-" For bad aiming
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
 nnoremap <F3> :set hlsearch!<CR>
-noremap <F2> :NERDTree<enter> 
+" leaderfunctions
+noremap <Leader>[ i[<C-o>e<C-o>l]<Esc>
+noremap <Leader>( i(<C-o>e<C-o>l)<Esc>
+noremap <Leader>< i<<C-o>e<C-o>l><Esc>
