@@ -128,7 +128,7 @@ fi
 
 cd ~/configs
 DIFF=$(git diff)
-if [ $DIFF != "" ]; then
+if [ "$DIFF" != "" ]; then
     update-configs
 fi
 cd -
