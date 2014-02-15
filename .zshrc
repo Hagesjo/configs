@@ -126,9 +126,12 @@ if [[ -f ~/.zshrc.local ]]; then
   . ~/.zshrc.local
 fi
 
-if [$(git diff) != ""]; then
+cd ~/configs
+DIFF=$(git diff)
+if [ $DIFF != "" ]; then
     update-configs
 fi
+cd -
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
