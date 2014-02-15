@@ -1,4 +1,5 @@
 # ~/.zshrc
+# Original:
 # $Id: zshrc 144 2012-04-19 23:01:12Z gnitset $
 #source ~/.zshrc_lib
 
@@ -124,6 +125,11 @@ fi
 if [[ -f ~/.zshrc.local ]]; then
   . ~/.zshrc.local
 fi
+
+if [$(git diff) != ""]; then
+    update-configs
+fi
+
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
