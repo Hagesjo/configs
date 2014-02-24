@@ -10,6 +10,7 @@ set ruler                           " Infobar at bottom
 set modelines=0                     " Disable modelines
 set undofile                        " Activate undofile
 set gdefault                        " %s/LOL/HERP/ is now %s/LOL/HERP/g
+colorscheme elflord
 syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
 " Shortcuts to go to EOL/Beginning of line ===========================
@@ -31,9 +32,10 @@ nnoremap / /\v
 vnoremap / /\v
 " Handle long lines correctly
 set wrap
-set textwidth=79
+set textwidth=85
 set formatoptions=qrn1
 set colorcolumn=85
+
 nnoremap <F3> :set hlsearch!<CR>
 " leaderfunctions
 noremap <Leader>[ i[<C-o>e<C-o>l]<Esc>
