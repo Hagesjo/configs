@@ -17,11 +17,16 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 
+
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*' special-dirs true
+
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
 
 autoload -U compinit
 compinit -d ~/.zcompdump.`hostname`
