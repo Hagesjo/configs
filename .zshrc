@@ -27,6 +27,11 @@ zstyle ':completion:*' special-dirs true
 
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+bindkey '^r' history-incremental-search-backward
+bindkey '^y' yank
+bindkey '^t' delete-word
+bindkey '^x' copy-prev-shell-word
+bindkey '^z' vi-undo-change
 
 autoload -U compinit
 compinit -d ~/.zcompdump.`hostname`
