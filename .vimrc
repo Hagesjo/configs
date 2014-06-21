@@ -1,11 +1,10 @@
 execute pathogen#infect()        
 filetype plugin on
-set invhlsearch					      " Inversesearch			
+set invhlsearch					    " Inversesearch			
 set number                          " Set linenumber
 set shiftwidth=4                    " Indentation
-set tabstop=4                       " One tab == 3 spaces
+set tabstop=4
 set smartindent                     " Set smartindent
-set expandtab                       " All spaces as tabs
 set softtabstop=4                   " Make backspace work on 'tabs'
 set ruler                           " Infobar at bottom
 set modelines=0                     " Disable modelines
