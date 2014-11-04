@@ -32,6 +32,7 @@ bindkey '^y' yank
 bindkey '^t' delete-word
 bindkey '^x' copy-prev-shell-word
 bindkey '^z' vi-undo-change
+bindkey '\e.' insert-last-word 
 
 autoload -U compinit
 compinit -d ~/.zcompdump.`hostname`
@@ -71,3 +72,5 @@ alias l='ls -CF'
 alias se='setxkbmap se'
 alias dv='setxkbmap dvorak se'
 alias svim='sudo vim'
+alias fuck='sudo \!\!' 
+
