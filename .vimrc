@@ -10,7 +10,14 @@ set ruler                           " Infobar at bottom
 set modelines=0                     " Disable modelines
 set undofile                        " Activate undofile
 set gdefault                        " %s/LOL/HERP/ is now %s/LOL/HERP/g
+set wildmenu						" Autocomplete commands at bottom nicely
+
+set mouse=a							" mouse support
+
+set scrolloff=1						" always show lines above/below cursor
+
 colorscheme elflord
+
 syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
 " Shortcuts to go to EOL/Beginning of line ===========================
@@ -34,8 +41,9 @@ vnoremap / /\v
 set wrap
 set textwidth=85
 set formatoptions=qrn1
-set colorcolumn=85
 
+" F keys
+set pastetoggle=<F2>
 nnoremap <F3> :set hlsearch!<CR>
 " leaderfunctions
 noremap <Leader>[ a<C-o>b[<C-o>e<C-o>l]<Esc>

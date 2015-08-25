@@ -64,7 +64,6 @@ fi
 if [[ -f ~/.zshrc.local ]]; then
   . ~/.zshrc.local
 fi
-
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
@@ -74,3 +73,13 @@ alias dv='setxkbmap dvorak se'
 alias svim='sudo vim'
 alias fuck='sudo \!\!' 
 
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias se='setxkbmap se'
+alias dv='setxkbmap dvorak se'
+alias svim='sudo vim'
+alias fuck='sudo \!\!' 
+alias grep='grep -n --color=always'
+alias fgrep='find | grep'
