@@ -45,11 +45,21 @@ set formatoptions=qrn1
 " F keys
 set pastetoggle=<F2>
 nnoremap <F3> :set hlsearch!<CR>
+
 " leaderfunctions
-noremap <Leader>[ a<C-o>b[<C-o>e<C-o>l]<Esc>
-noremap <Leader>( a<C-o>b(<C-o>e<C-o>l)<Esc>
-noremap <Leader>< a<C-o>b<<C-o>e<C-o>l><Esc>
-noremap <Leader>" a<C-o>b"<C-o>e<C-o>l"<Esc>
+noremap <Leader>[ ciw[<C-r>"]<Esc>
+noremap <Leader>( ciw(<C-r>")<Esc>
+noremap <Leader>< ciw<<C-r>"><Esc>
+noremap <Leader>" ciw"<C-r>""<Esc>
+noremap <Leader>' ciw"<C-r>""<Esc>
+
+noremap <Leader>] ciW[<C-r>"]<Esc>
+noremap <Leader>) ciW(<C-r>")<Esc>
+noremap <Leader>> ciW<<C-r>"><Esc>
+
+" Ugly hack to evaluate the selected expression and replace it with the result
+noremap <leader>e "eygv:s!<C-r>=substitute(@e, '\^', "\\^", 'g')<CR>!\=system('bc -l <<< "<C-r>e"')<CR>
+
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
