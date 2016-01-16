@@ -29,11 +29,6 @@ vnoremap <tab> %
 " Make j/k move through visible lines ================================
 noremap k gk
 noremap j gj
-" Shift +j/k for moving around quickly ===============================
-nmap J 5j
-nmap K 5k
-vmap J 5j
-vmap K 5k
 " Fix vims horrible (default) regexhandling =====================
 nnoremap / /\v
 vnoremap / /\v
@@ -51,7 +46,7 @@ noremap <Leader>[ ciw[<C-r>"]<Esc>
 noremap <Leader>( ciw(<C-r>")<Esc>
 noremap <Leader>< ciw<<C-r>"><Esc>
 noremap <Leader>" ciw"<C-r>""<Esc>
-noremap <Leader>' ciw"<C-r>""<Esc>
+noremap <Leader>' ciw'<C-r>"'<Esc>
 
 noremap <Leader>] ciW[<C-r>"]<Esc>
 noremap <Leader>) ciW(<C-r>")<Esc>
