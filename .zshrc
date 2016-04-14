@@ -42,7 +42,7 @@ alias py=python
 update-configs() {
 	emulate -L zsh
 
-   git clone https://github.com/Ankmeister/configs.git /tmp/tmpconfigs
+   git clone https://github.com/hagesjo/configs.git /tmp/tmpconfigs
    rsync -a /tmp/tmpconfigs/.[^.(git)]* ~
    rm -rf /tmp/tmpconfigs &&
 
