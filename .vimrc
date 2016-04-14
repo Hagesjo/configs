@@ -67,14 +67,16 @@ vmap <Leader>p "+p
 vmap <Leader>P "+P
 
 " Terminal stuff
-tnoremap <Esc><Esc> <c-\><c-n>
-tnoremap <silent> <c-h> <c-\><c-n><c-w>h
-tnoremap <silent> <c-j> <c-\><c-n><c-w>j
-tnoremap <silent> <c-k> <c-\><c-n><c-w>k
-tnoremap <silent> <c-l> <c-\><c-n><c-w>l
-tnoremap <silent> <Esc><c-l> <c-l>
+if has('nvim')
+    tnoremap <Esc><Esc> <c-\><c-n>
+    tnoremap <silent> <c-h> <c-\><c-n><c-w>h
+    tnoremap <silent> <c-j> <c-\><c-n><c-w>j
+    tnoremap <silent> <c-k> <c-\><c-n><c-w>k
+    tnoremap <silent> <c-l> <c-\><c-n><c-w>l
+    tnoremap <silent> <Esc><c-l> <c-l>
 
-augroup terminal
-	autocmd!
-	autocmd WinEnter term://* startinsert
-augroup END
+    augroup terminal
+        autocmd!
+        autocmd WinEnter term://* startinsert
+    augroup END
+endif
