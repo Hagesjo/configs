@@ -1,7 +1,7 @@
 all:
 	@echo possible targets: ssh screen vim tmux zsh and install ('install' installs everything)
 
-install: ssh screen vim zsh tmux
+install: ssh screen vim nvim zsh tmux
 
 ssh:
 	install -d -m 0755 ${HOME}/.ssh
@@ -11,8 +11,13 @@ screen:
 	install -b -m 0644 .screenrc ${HOME}/.screenrc
 
 vim:
-	cp -r .vim ${HOME}/.vim
+	rsync -a .vim ${HOME}
 	install -b -m 0644 .vimrc ${HOME}/.vimrc
+
+nvim:
+	mkdir -p ${HOME}/.config
+	ln -sf ${HOME}/.vim ${HOME}/.config/nvim
+	ln -sf ${HOME}/.vimrc ${HOME}/.config/nvim/init.vim  
 
 zsh:
 	install -b -m 0644 .zshrc ${HOME}/.zshrc

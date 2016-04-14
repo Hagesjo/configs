@@ -1,5 +1,12 @@
-execute pathogen#infect()        
-filetype plugin on
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim'
+Plug 'kien/ctrlp.vim'
+
+call plug#end()
+
 set invhlsearch					    " Inversesearch			
 set number                          " Set linenumber
 set shiftwidth=4                    " Indentation
@@ -9,37 +16,37 @@ set softtabstop=4                   " Make backspace work on 'tabs'
 set ruler                           " Infobar at bottom
 set modelines=0                     " Disable modelines
 set undofile                        " Activate undofile
-set gdefault                        " %s/LOL/HERP/ is now %s/LOL/HERP/g
+set gdefault                        " %s/foo/bar/ is now %s/foo/bar/g
+set expandtab
 set wildmenu						" Autocomplete commands at bottom nicely
 
 set mouse=a							" mouse support
 
 set scrolloff=1						" always show lines above/below cursor
 
-colorscheme elflord
-
 syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
-" Shortcuts to go to EOL/Beginning of line ===========================
-map  <C-E>      $
-imap <C-E>      <C-O>$
+
+colorscheme desert
+
 " Make bracketmatching with tab 
 nnoremap <tab> %
 vnoremap <tab> %
 " Make j/k move through visible lines ================================
 noremap k gk
 noremap j gj
-" Fix vims horrible (default) regexhandling =====================
-nnoremap / /\v
-vnoremap / /\v
 " Handle long lines (correctly
 set wrap
 set textwidth=85
 set formatoptions=qrn1
 
+" select previous altered text
+nnoremap gV `[v`]
+
 " F keys
 set pastetoggle=<F2>
 nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F4> :set number!<CR>
 
 " leaderfunctions
 noremap <Leader>[ ciw[<C-r>"]<Esc>
@@ -52,12 +59,22 @@ noremap <Leader>] ciW[<C-r>"]<Esc>
 noremap <Leader>) ciW(<C-r>")<Esc>
 noremap <Leader>> ciW<<C-r>"><Esc>
 
-" Ugly hack to evaluate the selected expression and replace it with the result
-noremap <leader>e "eygv:s!<C-r>=substitute(@e, '\^', "\\^", 'g')<CR>!\=system('bc -l <<< "<C-r>e"')<CR>
-
 vmap <Leader>y "+y
 vmap <Leader>d "+d
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" Terminal stuff
+tnoremap <Esc><Esc> <c-\><c-n>
+tnoremap <silent> <c-h> <c-\><c-n><c-w>h
+tnoremap <silent> <c-j> <c-\><c-n><c-w>j
+tnoremap <silent> <c-k> <c-\><c-n><c-w>k
+tnoremap <silent> <c-l> <c-\><c-n><c-w>l
+tnoremap <silent> <Esc><c-l> <c-l>
+
+augroup terminal
+	autocmd!
+	autocmd WinEnter term://* startinsert
+augroup END
