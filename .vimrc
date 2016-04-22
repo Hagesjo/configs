@@ -27,7 +27,7 @@ set scrolloff=1						" always show lines above/below cursor
 syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
 
-colorscheme koehler
+colorscheme elflord
 
 " Make bracketmatching with tab 
 nnoremap <tab> %
