@@ -48,6 +48,12 @@ set pastetoggle=<F2>
 nnoremap <F3> :set hlsearch!<CR>
 nnoremap <F4> :set number!<CR>
 
+" switch between splits
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 " leaderfunctions
 noremap <Leader>[ ciw[<C-r>"]<Esc>
 noremap <Leader>( ciw(<C-r>")<Esc>
@@ -65,6 +71,10 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" CtrlP
+nnoremap <leader>o :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Terminal stuff
 if has('nvim')
