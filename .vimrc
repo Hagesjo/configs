@@ -7,6 +7,7 @@ Plug 'neomake/neomake'
 
 Plug 'sjl/gundo.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'dikiaap/minimalist'
 
 call plug#end()
 
@@ -30,7 +31,7 @@ set scrolloff=1						" always show lines above/below cursor
 syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
 
-colorscheme elflord
+colorscheme minimalist
 
 " Make bracketmatching with tab 
 nnoremap <tab> %
