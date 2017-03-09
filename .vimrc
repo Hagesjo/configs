@@ -2,8 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdcommenter'
 
-"Plug 'scrooloose/syntastic'
-Plug 'neomake/neomake'
+Plug 'scrooloose/syntastic'
 
 Plug 'sjl/gundo.vim'
 Plug 'kien/ctrlp.vim'
@@ -94,6 +93,3 @@ if has('nvim')
         autocmd WinEnter term://* startinsert
     augroup END
 endif
-
-autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 2
