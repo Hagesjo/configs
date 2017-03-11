@@ -50,6 +50,8 @@ nnoremap gV `[v`]
 set pastetoggle=<F2>
 nnoremap <F3> :set hlsearch!<CR>
 nnoremap <F4> :set number!<CR>
+nnoremap <F5> :SyntasticCheck<CR>
+nnoremap <F6> :SyntasticToggleMode<CR>
 
 " switch between splits
 noremap <C-h> <C-w>h
@@ -93,3 +95,6 @@ if has('nvim')
         autocmd WinEnter term://* startinsert
     augroup END
 endif
+
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
