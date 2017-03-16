@@ -31,6 +31,7 @@ syntax on                           " Syntax highlighting
 let mapleader = ","                 " remap leaderkey
 
 colorscheme minimalist
+hi Search ctermfg=207 ctermbg=NONE cterm=underline guifg=#ff5fff guibg=NONE gui=underline
 
 " Make bracketmatching with tab 
 nnoremap <tab> %
