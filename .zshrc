@@ -37,7 +37,7 @@ bindkey '\e.' insert-last-word
 autoload -U compinit
 compinit -d ~/.zcompdump.`hostname`
 
-alias py=python
+alias py=python3
 
 update-configs() {
 	emulate -L zsh
@@ -72,5 +72,5 @@ alias se='setxkbmap se'
 alias dv='setxkbmap dvorak se'
 alias svim='sudo vim'
 alias fuck='sudo \!\!' 
-alias grep='grep -n --color=always'
+alias grep='grep --color=always'
 alias fgrep='find | grep'
