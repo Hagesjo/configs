@@ -7,10 +7,27 @@ Plug 'scrooloose/syntastic'
 Plug 'sjl/gundo.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'dikiaap/minimalist'
+Plug 'airblade/vim-gitgutter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sebdah/vim-delve'
 
 call plug#end()
 
-set invhlsearch					    " Inversesearch			
+" coc
+let g:coc_global_extensions = [
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-pyright',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ ]
+
+" mac
+set backspace=indent,eol,start
+vmap '' :w !pbcopy<CR><CR>
+
+set hlsearch					    " Search highlighting
 set number                          " Set linenumber
 set shiftwidth=4                    " Indentation
 set tabstop=4
@@ -33,12 +50,13 @@ let mapleader = ","                 " remap leaderkey
 colorscheme minimalist
 hi Search ctermfg=207 ctermbg=NONE cterm=underline guifg=#ff5fff guibg=NONE gui=underline
 
+
 " Make bracketmatching with tab 
 nnoremap <tab> %
 vnoremap <tab> %
 " Make j/k move through visible lines ================================
-noremap k gk
-noremap j gj
+"noremap k gk
+"noremap j gj
 " Handle long lines (correctly
 set wrap
 set textwidth=85
@@ -99,3 +117,21 @@ endif
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
+
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp/
+
+" coc from mange
+" Give more space for displaying messages.
+set cmdheight=1
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" go auto import on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
