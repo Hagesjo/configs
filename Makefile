@@ -1,7 +1,7 @@
 all:
 	@echo possible targets: ssh screen vim tmux zsh and install ('install' installs everything)
 
-install: ssh screen vim nvim zsh tmux
+install: ssh screen vim nvim zsh tmux git
 
 ssh:
 	install -d -m 0755 ${HOME}/.ssh
@@ -27,6 +27,9 @@ zsh:
 	zsh -c 'zcompile ${HOME}/.zprofile' 2> /dev/null || exit 0
 	zsh -c 'zcompile ${HOME}/.zshrc.local' 2> /dev/null || exit 0
 	zsh -c 'zcompile ${HOME}/.zprofile.local' 2> /dev/null || exit 0
+
+git:
+	install -b -m 0644 .gitconfig ${HOME}/.gitconfig
 
 tmux:
 	install -b -m 0644 .tmux.conf ${HOME}/.tmux.conf
